@@ -1,0 +1,11 @@
+{
+  "name": "bchm-quiz",
+  "version": "1.0.0",
+  "description": "Quiz of local history for the Blaine County Historical Museum",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Anderton",
+  "license": "ISC"
+}
