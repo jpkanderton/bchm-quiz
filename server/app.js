@@ -9,3 +9,5 @@ app.use(bodyParser.json());
 app.get("/", (req, res) => {
   res.send("hello world");
 });
+
+module.exports = app;
