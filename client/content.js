@@ -1,7 +1,7 @@
 const questionsData = [
   {
-    question: "here is a question",
-    answers: ["answer1 a", "answer2a ", "answer 3", "answer4"],
+    question: "Who was the first mayor of Hailey",
+    answers: ["John Hailey", "Kaili Smith ", "Michael Starr", "Arnold Palmer"],
     correct: 1,
   },
   {
