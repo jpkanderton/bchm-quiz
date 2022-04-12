@@ -120,6 +120,9 @@ Personality Type: Playful Fun (#7)
     2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 
 
+  **** BOX-SHADOW ****
+    box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+
 */
 
 * {
@@ -166,6 +169,7 @@ body {
   padding-top: 30rem;
   padding-bottom: 10rem;
   background-color: #ffcb3c;
+  transition: all 0.5s;
 }
 
 .quiz-brand-box-inner {
@@ -191,6 +195,7 @@ body {
   background-color: #ffd86d;
   display: flex;
   justify-content: center;
+  transition: all 0.5s;
 }
 
 .btn {
@@ -203,9 +208,74 @@ body {
   font-size: 2rem;
   font-family: inherit;
   color: #f7f7f7;
+  transition: all 0.5s;
 }
 
 .btn:hover {
   background-color: #f7f7f7;
   color: #ff006e;
+}
+
+.loading .quiz-brand-box,
+.loading .quiz-button-box {
+  background-color: #332602;
+}
+
+.loading .btn {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/*QUESTION SCREEN*/
+.question-screen {
+  margin-top: 10rem;
+  background-color: #fff2ce;
+}
+
+.question {
+  max-width: 60rem;
+  margin: 0 auto;
+  border: 0.2rem solid black;
+  background-color: #f7f7f7;
+  padding: 30rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffcb3c;
+}
+
+.icon-happy {
+  height: 30rem;
+  width: 30rem;
+  color: #f7f7f7;
+}
+
+/*ANSWER*/
+.question-screen {
+  margin-top: 10rem;
+  background-color: #fff2ce;
+}
+
+.question {
+  max-width: 60rem;
+  margin: 0 auto;
+  border: 0.2rem solid black;
+  background-color: #f7f7f7;
+  padding: 30rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffcb3c;
+}
+
+.icon-happy,
+.icon-sad {
+  height: 30rem;
+  width: 30rem;
+  color: #f7f7f7;
+}
+
+.question.wrong-answer {
+  background-color: #332602;
 }
