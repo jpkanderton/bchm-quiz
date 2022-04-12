@@ -247,10 +247,10 @@ body {
 
 .question-container {
   padding: 2.5rem;
+  padding-top: 5rem;
 }
 
 .question-q-text {
-  padding-top: 5rem;
   font-size: 4rem;
   font-weight: 700;
 }
@@ -260,7 +260,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
-  padding-top: 7.5rem;
+  padding-top: 4.5rem;
 }
 
 .question-answers li {
@@ -286,7 +286,7 @@ body {
 }
 
 .btn--submit {
-  margin-top: 5rem;
+  margin-top: 11rem;
   background-color: #ffd86d;
 }
 
@@ -297,14 +297,14 @@ body {
 
 /* QUESTION NUMBER */
 .question-header {
-  padding-top: 5rem;
+  padding-top: 8rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .question-number {
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   font-size: 3.2rem;
 }
 
