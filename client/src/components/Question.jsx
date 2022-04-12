@@ -6,7 +6,33 @@ import questions from "../../content.js";
 const { useState, useEffect } = React;
 
 const Question = ({ questionData }) => {
-  console.log(questionData.question);
+  // console.log(`Correct answer is index: ${questionData.correct}`);
+
+  const [selected, setSelected] = useState("no_selection");
+  const selectedID, correctID;
+  selectedID = selected;
+  correctID = questionData.correct;
+
+
+  const handleClick = (index) => {
+    setSelected(index);
+  };
+
+  const handleSubmit = () => {
+    let result = "";
+
+    if (selected === "no_selection") {
+      result = "You need to select an answer";
+    } else if (selected === questionData.correct) {
+      result = "You are correct";
+      document.getElementByClass();
+    } else {
+      result = "You are incorrect";
+    }
+
+    console.log(result);
+  };
+
   return (
     <div className="section">
       <div className="section-content">
@@ -17,9 +43,9 @@ const Question = ({ questionData }) => {
             <p>{questionData.question}</p>
           </div>
           <ul className="question-answers">
-            {questionData.answers.map((answer) => {
+            {questionData.answers.map((answer, index) => {
               return (
-                <li>
+                <li onClick={() => handleClick(index)} key={index}>
                   <p>{answer}</p>
                 </li>
               );
@@ -28,7 +54,9 @@ const Question = ({ questionData }) => {
         </div>
 
         <div className="container-submit">
-          <button className="btn btn--submit">Submit</button>
+          <button className="btn btn--submit" onClick={handleSubmit}>
+            Submit
+          </button>
         </div>
       </div>
     </div>
