@@ -1,3 +1,127 @@
+/*
+Personality Type: Playful Fun (#7)
+  - round and creative typography
+  - sans-serif fonts
+  - handwritten fonts
+
+  - frequent use of colors
+  - bright colors in background, text, and images
+
+  - subtle shadows are used
+
+  - border-radius is common
+
+  - use icons
+
+  ////////////////////////////////////////////////////////////
+
+  **** TYPOGRAPHY ****
+    font-size:
+    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+    font-weight:
+      400 (default)
+      500
+      700
+
+    line heights:
+      1 (Default)
+      1.05
+      1.2
+      1.8
+      1.6 (Paragraph default)
+
+  letter-spacing:
+    -0.5px
+    0.75px
+    1.2px
+
+
+  **** COLORS ****
+  https://coolors.co/palette/ffbe0b-fb5607-ff006e-8338ec-3a86ff
+
+  Main
+    (primary)
+    #FFBE0B
+    (tints)
+    #ffcb3c
+    #ffd86d
+    #fff2ce
+    #fff9e7
+    (shades)
+    #cc9809
+    #b38508
+    #332602
+    (accents)
+
+  Secondary (30%, 70%)
+    (primary)
+    #FB5607
+    (tints)
+    #feccb5
+    #fc8951
+    (shades)
+    #c94506
+    #4b1a02
+    (accents)
+
+  Tertiary
+    (primary)
+    #FF006E
+    (tints)
+    #ffb3d4
+    #ff4d9a
+    (shades)
+    #b3004d
+    #4c0021
+    (accents)
+
+  Quadriary
+    (primary)
+    #8338EC
+    (tints)
+    #dac3f9
+    #a874f2
+    (shades)
+    #5c27a5
+    #271147
+    (accents)
+
+
+  Cinquetiary
+    (primary)
+    #3A86FF
+    (tints)
+    #c4dbff
+    #619eff
+    (shades)
+    #295eb3
+    #11284c
+    (accents)
+
+
+  Greys:
+    #888
+    #767676
+    #6f6f6f
+    #555
+    #333
+
+
+
+
+  **** BORDER RADIUS ****
+    9px (default)
+    11px (medium)
+
+
+  **** WHITESPACE ****
+    spacing system (px):
+    2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -5,5 +129,83 @@
 }
 
 html {
-  font-size: 10px;
+  font-size: 62.5%;
+  color: #332602;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1;
+  background-color: #fff9e7;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+/* HOME SCREEN*/
+.home-screen {
+  margin-top: 10rem;
+  background-color: #fff2ce;
+}
+
+.quiz {
+  max-width: 60rem;
+  margin: 0 auto;
+  border: 0.2rem solid black;
+  background-color: #f7f7f7;
+}
+
+.quiz-brand-box {
+  display: flex;
+  justify-content: center;
+  padding-top: 30rem;
+  padding-bottom: 10rem;
+  background-color: #ffcb3c;
+}
+
+.quiz-brand-box-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.bchs-logo {
+  width: 22rem;
+}
+
+.bchs-text {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  color: #f7f7f7;
+}
+
+.quiz-button-box {
+  padding-top: 3rem;
+  padding-bottom: 10rem;
+  background-color: #ffd86d;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  background-color: #ff006e;
+  padding: 2.5rem 5rem;
+  border-radius: 9px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 2rem;
+  font-family: inherit;
+  color: #f7f7f7;
+}
+
+.btn:hover {
+  background-color: #f7f7f7;
+  color: #ff006e;
 }
