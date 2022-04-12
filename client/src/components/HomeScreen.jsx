@@ -16,21 +16,19 @@ const HomeScreen = () => {
 
   return (
     <div className="section section-home loading">
-      <div className="container">
-        <div className="section-content section-content-home">
-          <div className="quiz-brand-box">
-            <div className="quiz-brand-box-inner">
-              <img
-                src={bchsLogo}
-                alt="Blaine County Historical Museum logo"
-                className="bchs-logo"
-              />
-              <p className="bchs-text">Blaine County Historical Museum Quiz</p>
-            </div>
+      <div className="section-content section-content-home">
+        <div className="quiz-brand-box">
+          <div className="quiz-brand-box-inner">
+            <img
+              src={bchsLogo}
+              alt="Blaine County Historical Museum logo"
+              className="bchs-logo"
+            />
+            <p className="bchs-text">Blaine County Historical Museum Quiz</p>
           </div>
-          <div className="quiz-button-box">
-            <a className="btn">Start</a>
-          </div>
+        </div>
+        <div className="quiz-button-box">
+          <a className="btn">Start</a>
         </div>
       </div>
     </div>

@@ -15,36 +15,32 @@ const Question = () => {
 
   return (
     <div className="section section-question">
-      <div className="container">
-        <div className="section-content section-content-question">
-          <div className="question-header">
-            <div className="circle-container">
-              <div className="circle"></div>
-            </div>
+      <div className="section-content section-content-question">
+        <div className="question-header">
+          <div className="question-number"> Question 1</div>
+        </div>
+        <div className="question-container">
+          <div className="question-q-text">
+            <p>Here is a random question?</p>
           </div>
-          <div className="question-container">
-            <div className="question-q-text">
-              <p>Here is a random question?</p>
-            </div>
-            <ul className="question-answers">
-              <li>
-                <p>Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1</p>
-              </li>
-              <li>
-                <p>Answer 1</p>
-              </li>
-              <li>
-                <p>Answer 1</p>
-              </li>
-              <li>
-                <p>Answer 1</p>
-              </li>
-            </ul>
-          </div>
+          <ul className="question-answers">
+            <li>
+              <p>Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1</p>
+            </li>
+            <li>
+              <p>Answer 1</p>
+            </li>
+            <li>
+              <p>Answer 1</p>
+            </li>
+            <li>
+              <p>Answer 1</p>
+            </li>
+          </ul>
+        </div>
 
-          <div className="container-submit">
-            <button className="btn btn--submit">Submit</button>
-          </div>
+        <div className="container-submit">
+          <button className="btn btn--submit">Submit</button>
         </div>
       </div>
     </div>

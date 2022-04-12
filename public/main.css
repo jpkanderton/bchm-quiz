@@ -245,23 +245,22 @@ body {
 }
 
 .section-content-question {
-  padding: 10rem 0;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   gap: 3rem;
-  /* justify-content: center;
-  align-items: center; */
-  background-color: #ffcb3c;
+  background-color: #ffcb3c; */
 }
 
 .question-header {
   padding-top: 5rem;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.circle-container {
-}
-
-.circle {
+.question-number {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 3.2rem;
 }
 
 .question-container {
@@ -300,6 +299,7 @@ body {
 .container-submit {
   display: flex;
   justify-content: center;
+  padding-bottom: 10rem;
 }
 
 .btn--submit {
