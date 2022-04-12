@@ -1,24 +1,16 @@
 import React from "react";
+import QuestionNumber from "./QuestionNumber.jsx";
+import Exit from "./Exit.jsx";
+import questions from "../../content.js";
 
 const { useState, useEffect } = React;
 
 const Question = () => {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      console.log("setting time out");
-      let homeScreen = document.getElementsByClassName("loading")[0];
-      console.log(homeScreen);
-      homeScreen.classList.remove("loading");
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <div className="section section-question">
-      <div className="section-content section-content-question">
-        <div className="question-header">
-          <div className="question-number"> Question 1</div>
-        </div>
+    <div className="section">
+      <div className="section-content">
+        <Exit />
+        <QuestionNumber />
         <div className="question-container">
           <div className="question-q-text">
             <p>Here is a random question?</p>

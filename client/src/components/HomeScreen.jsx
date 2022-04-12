@@ -16,9 +16,9 @@ const HomeScreen = () => {
 
   return (
     <div className="section section-home loading">
-      <div className="section-content section-content-home">
-        <div className="quiz-brand-box">
-          <div className="quiz-brand-box-inner">
+      <div className="section-content">
+        <div className="brand-box">
+          <div className="brand-box-inner">
             <img
               src={bchsLogo}
               alt="Blaine County Historical Museum logo"
@@ -27,8 +27,8 @@ const HomeScreen = () => {
             <p className="bchs-text">Blaine County Historical Museum Quiz</p>
           </div>
         </div>
-        <div className="quiz-button-box">
-          <a className="btn">Start</a>
+        <div className="btn-box--home">
+          <a className="btn btn--start">Start</a>
         </div>
       </div>
     </div>
