@@ -5,29 +5,25 @@ import questions from "../../content.js";
 
 const { useState, useEffect } = React;
 
-const Question = () => {
+const Question = ({ questionData }) => {
+  console.log(questionData.question);
   return (
     <div className="section">
       <div className="section-content">
         <Exit />
-        <QuestionNumber />
+        <QuestionNumber number={questionData.number} />
         <div className="question-container">
           <div className="question-q-text">
-            <p>Here is a random question?</p>
+            <p>{questionData.question}</p>
           </div>
           <ul className="question-answers">
-            <li>
-              <p>Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1</p>
-            </li>
-            <li>
-              <p>Answer 1</p>
-            </li>
-            <li>
-              <p>Answer 1</p>
-            </li>
-            <li>
-              <p>Answer 1</p>
-            </li>
+            {questionData.answers.map((answer) => {
+              return (
+                <li>
+                  <p>{answer}</p>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
