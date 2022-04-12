@@ -150,15 +150,23 @@ body {
   padding: 0 3.2rem;
 }
 
-/* HOME SCREEN*/
-.home-screen {
+.section {
   margin-top: 10rem;
   background-color: #fff2ce;
 }
 
-.quiz {
+.section-content {
   max-width: 60rem;
   margin: 0 auto;
+  background-color: #ffcb3c;
+}
+
+/* HOME SCREEN*/
+
+/* .home-screen {
+} */
+
+.section-content-home {
   border: 0.2rem solid black;
   background-color: #f7f7f7;
 }
@@ -228,40 +236,26 @@ body {
 }
 
 /*QUESTION SCREEN*/
-.question-screen {
+.section-question {
   margin-top: 10rem;
   background-color: #fff2ce;
 }
 
-.question {
-  max-width: 60rem;
-  margin: 0 auto;
-  border: 0.2rem solid black;
-  background-color: #f7f7f7;
+.section-content-question {
   padding: 30rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #ffcb3c;
-}
-
-.icon-happy {
-  height: 30rem;
-  width: 30rem;
-  color: #f7f7f7;
 }
 
 /*ANSWER*/
-.question-screen {
+.section-answer {
   margin-top: 10rem;
   background-color: #fff2ce;
 }
 
-.question {
-  max-width: 60rem;
-  margin: 0 auto;
-  border: 0.2rem solid black;
-  background-color: #f7f7f7;
+.section-content-answer {
   padding: 30rem 0;
   display: flex;
   justify-content: center;
@@ -269,13 +263,16 @@ body {
   background-color: #ffcb3c;
 }
 
-.icon-happy,
-.icon-sad {
+.wrong-answer .section-content-answer {
+  background-color: #332602;
+}
+
+.icon {
   height: 30rem;
   width: 30rem;
   color: #f7f7f7;
 }
 
-.question.wrong-answer {
+/* .wrong-answer .icon {
   background-color: #332602;
-}
+} */

@@ -1,13 +1,23 @@
 import React from "react";
 import bchsLogo from "../imgs/BCHM-Logo-White.png";
 
-const { useState } = React;
+const { useState, useEffect } = React;
 
 const HomeScreen = () => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      console.log("setting time out");
+      let homeScreen = document.getElementsByClassName("loading")[0];
+      console.log(homeScreen);
+      homeScreen.classList.remove("loading");
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="home-screen">
+    <div className="section section-home loading">
       <div className="container">
-        <div className="quiz">
+        <div className="section-content section-content-home">
           <div className="quiz-brand-box">
             <div className="quiz-brand-box-inner">
               <img
