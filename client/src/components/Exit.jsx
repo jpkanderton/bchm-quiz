@@ -3,7 +3,10 @@ import React from "react";
 const Exit = () => {
   return (
     <div className="container-exit">
-      <div className="exit-text">Exit</div>
+      <a>
+        <div className="exit-text">Exit</div>
+        <ion-icon class="icon-exit" name="exit-outline"></ion-icon>
+      </a>
     </div>
   );
 };

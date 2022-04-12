@@ -160,6 +160,7 @@ body {
   margin: 0 auto;
   background-color: #ffcb3c;
   transition: all 0.5s;
+  border-bottom: 1px solid black;
 }
 
 .btn {
@@ -314,10 +315,25 @@ body {
   justify-content: flex-end;
 }
 
-.exit-text {
-  display: inline-block;
+.container-exit a {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
   padding: 1rem 2rem;
+  color: #f7f7f7;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.exit-text {
   font-size: 3.2rem;
+  text-transform: lowercase;
+  font-weight: 400;
+}
+
+.icon-exit {
+  height: 3.2rem;
+  width: 3.2rem;
 }
 
 /*ANSWER SECTION*/
