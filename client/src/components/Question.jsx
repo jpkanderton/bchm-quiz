@@ -5,7 +5,7 @@ import questions from "../../content.js";
 
 const { useState, useEffect } = React;
 
-const Question = ({ questionData }) => {
+const Question = ({ questionData, number }) => {
   // console.log(`Correct answer is index: ${questionData.correct}`);
 
   const [selected, setSelected] = useState("no_selection");
@@ -14,6 +14,8 @@ const Question = ({ questionData }) => {
   //   selectedClass = "selected" + "_" + selected;
   //   console.log(selectedClass);
   // }, [selected]);
+
+  let hideElement = number !== questionData.number;
 
   const handleClick = (index) => {
     setSelected(index);
@@ -52,7 +54,7 @@ const Question = ({ questionData }) => {
   };
 
   return (
-    <div className="section">
+    <div className={`section ${hideElement ? "hide" : ""}`}>
       <div className="section-content">
         <Exit />
         <QuestionNumber number={questionData.number} />
