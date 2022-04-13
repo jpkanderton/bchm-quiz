@@ -154,6 +154,10 @@ body {
   background-color: #fff2ce;
 }
 
+.others .section {
+  position: absolute;
+}
+
 .section-content {
   min-height: 100vh;
   max-width: 60rem;
@@ -175,6 +179,19 @@ body {
   letter-spacing: 2px;
   color: #f7f7f7;
   transition: all 0.5s;
+}
+
+.hide {
+  display: none;
+  position: absolute;
+}
+
+.hide-alt {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.5s;
+  display: none;
 }
 
 /* HOME SCREEN*/
@@ -240,6 +257,8 @@ body {
 
 /*QUESTION SECTION*/
 /* .section-question {
+  display: none;
+  position: absolute;
 } */
 
 /* .section-content-question {

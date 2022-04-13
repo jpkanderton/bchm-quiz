@@ -31,14 +31,21 @@ const Question = ({ questionData }) => {
 
   const handleSubmit = () => {
     let result = "";
+    let selectedElement = document.getElementsByClassName("selected")[0];
+    let correctElement = document.getElementsByClassName("correct")[0];
+
+    console.log(selectedElement);
 
     if (selected === "no_selection") {
       result = "You need to select an answer";
     } else if (selected === questionData.correct) {
       result = "You are correct";
-      document.getElementByClass();
+      selectedElement.style.backgroundColor = "#FFBE0B";
     } else {
       result = "You are incorrect";
+      selectedElement.style.backgroundColor = "#4b1a02";
+      correctElement.style.backgroundColor = "#FFBE0B";
+      correctElement.style.boxShadow = "0 2.4rem 4.8rem rgba(0, 0, 0, 0.15)";
     }
 
     console.log(result);
@@ -61,7 +68,7 @@ const Question = ({ questionData }) => {
                   <li
                     onClick={() => handleClick(index)}
                     key={index}
-                    class="correct"
+                    className="correct"
                   >
                     <p>{answer}</p>
                   </li>

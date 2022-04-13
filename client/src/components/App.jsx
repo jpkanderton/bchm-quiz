@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import HomeScreen from "./HomeScreen.jsx";
 import Question from "./Question.jsx";
 import CorrectAnswer from "./CorrectAnswer.jsx";
@@ -13,13 +14,14 @@ const App = () => {
   return (
     <div className="container">
       <HomeScreen />
-      <div className="others">
+      <div className="others hide">
         {questionsData.map((questionData, index) => {
           questionData.number = index;
           return <Question questionData={questionData} />;
         })}
-        <CorrectAnswer />
-        <WrongAnswer />
+        <Link to="/correct">Correct</Link>
+        {/* <CorrectAnswer />
+        <WrongAnswer /> */}
       </div>
     </div>
   );
