@@ -9,13 +9,24 @@ const Question = ({ questionData }) => {
   // console.log(`Correct answer is index: ${questionData.correct}`);
 
   const [selected, setSelected] = useState("no_selection");
-  const selectedID, correctID;
-  selectedID = selected;
-  correctID = questionData.correct;
 
+  // useEffect(() => {
+  //   selectedClass = "selected" + "_" + selected;
+  //   console.log(selectedClass);
+  // }, [selected]);
 
   const handleClick = (index) => {
     setSelected(index);
+    let element = event.target;
+    let elements = document.getElementsByClassName("question-answers");
+
+    for (let i = 0; i < elements.length; i++) {
+      for (let j = 0; j < elements[i].children.length; j++) {
+        elements[i].children[j].classList.remove("selected");
+      }
+    }
+
+    element.classList.add("selected");
   };
 
   const handleSubmit = () => {
@@ -44,6 +55,18 @@ const Question = ({ questionData }) => {
           </div>
           <ul className="question-answers">
             {questionData.answers.map((answer, index) => {
+              // console.log(`answer is ${questionData.correct}`);
+              if (index === questionData.correct) {
+                return (
+                  <li
+                    onClick={() => handleClick(index)}
+                    key={index}
+                    class="correct"
+                  >
+                    <p>{answer}</p>
+                  </li>
+                );
+              }
               return (
                 <li onClick={() => handleClick(index)} key={index}>
                   <p>{answer}</p>

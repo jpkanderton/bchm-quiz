@@ -279,6 +279,10 @@ body {
   background-color: #fff9e7;
 }
 
+.question-answers li p {
+  pointer-events: none;
+}
+
 .container-submit {
   display: flex;
   justify-content: center;

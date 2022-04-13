@@ -6,9 +6,7 @@ const { useState, useEffect } = React;
 const HomeScreen = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
-      console.log("setting time out");
       let homeScreen = document.getElementsByClassName("loading")[0];
-      console.log(homeScreen);
       homeScreen.classList.remove("loading");
     }, 1000);
     return () => clearTimeout(timer);
