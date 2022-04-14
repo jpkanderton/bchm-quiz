@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const Exit = () => {
   const navigate = useNavigate();
+
   const handleClick = () => {
     navigate("/");
   };

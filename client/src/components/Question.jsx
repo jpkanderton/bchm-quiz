@@ -5,18 +5,11 @@ import questions from "../../content.js";
 
 const { useState, useEffect } = React;
 
-const Question = ({ questionData, number }) => {
-  // console.log(`Correct answer is index: ${questionData.correct}`);
-
+const Question = ({ questionData, number, changeState }) => {
   const [selected, setSelected] = useState("no_selection");
-
-  // useEffect(() => {
-  //   selectedClass = "selected" + "_" + selected;
-  //   console.log(selectedClass);
-  // }, [selected]);
-
   let hideElement = number !== questionData.number;
 
+  //////////////// LOGIC TO HANDLE SELECTION OF ANSWER
   const handleClick = (index) => {
     setSelected(index);
     let element = event.target;
@@ -32,11 +25,11 @@ const Question = ({ questionData, number }) => {
   };
 
   const handleSubmit = () => {
+    //////////////// LOGIC FOR SELECTED VS CORRECT ANSWER
+    /*
     let result = "";
     let selectedElement = document.getElementsByClassName("selected")[0];
     let correctElement = document.getElementsByClassName("correct")[0];
-
-    console.log(selectedElement);
 
     if (selected === "no_selection") {
       result = "You need to select an answer";
@@ -49,14 +42,15 @@ const Question = ({ questionData, number }) => {
       correctElement.style.backgroundColor = "#FFBE0B";
       correctElement.style.boxShadow = "0 2.4rem 4.8rem rgba(0, 0, 0, 0.15)";
     }
+    */
 
-    console.log(result);
+    //////////////// CHANGES THE QUESTION NUMBER BY USING THE STATE OF THE PARENT ELEMENT
+    changeState();
   };
 
   return (
-    <div className={`section ${hideElement ? "hide" : ""}`}>
+    <div className={`section ${hideElement ? "hide-alt" : ""}`}>
       <div className="section-content">
-        <Exit />
         <QuestionNumber number={questionData.number} />
         <div className="question-container">
           <div className="question-q-text">
@@ -64,7 +58,6 @@ const Question = ({ questionData, number }) => {
           </div>
           <ul className="question-answers">
             {questionData.answers.map((answer, index) => {
-              // console.log(`answer is ${questionData.correct}`);
               if (index === questionData.correct) {
                 return (
                   <li

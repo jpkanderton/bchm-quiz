@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import bchsLogo from "../imgs/BCHM-Logo-White.png";
 
 const { useState, useEffect } = React;
@@ -16,11 +16,7 @@ const HomeScreen = () => {
   }, []);
 
   const handleClick = () => {
-    let element = document.getElementsByClassName("section-home")[0];
-    let next = document.getElementsByClassName("wrong-answer")[0];
-    navigate("/correct");
-    // element.classList.add("hide-alt");
-    // next.classList.remove("hide-alt");
+    navigate("/questions");
   };
 
   return (
