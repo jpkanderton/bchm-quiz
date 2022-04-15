@@ -19,17 +19,15 @@ export default () => {
     setPoints(points + amnt);
   };
 
-  //////////////// LOGIC TO CHANGE THE STATE OF THE
+  //////////////// LOGIC TRIGGER A ROUTE CHANGE
   useEffect(() => {
     if (nextSection) {
       navigate("/finalScore", { state: { points: points } });
     }
   }, [nextSection]);
 
+  //////////////// LOGIC TO CHANGE THE QUESTION NUMBER
   const changeState = () => {
-    console.log(
-      `the Current Question is ${questionNum} and the length is ${questionsData.length}`
-    );
     if (questionNum >= questionsData.length) {
       setNS(true);
     }

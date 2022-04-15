@@ -6,6 +6,7 @@ import questions from "../../content.js";
 const { useState, useEffect } = React;
 
 const Question = ({ questionData, questionNum, changeState, addPoint }) => {
+  const sectionName = "section-question-" + questionData.number;
   console.log(`current question displayed is ${questionNum}`);
   const [selected, setSelected] = useState("no_selection");
 
@@ -13,8 +14,8 @@ const Question = ({ questionData, questionNum, changeState, addPoint }) => {
 
   //////////////// LOGIC TO HANDLE SELECTION OF ANSWER
   const handleClick = (index) => {
-    setSelected(index);
     let element = event.target;
+    setSelected(element);
     let elements = document.getElementsByClassName("question-answers");
 
     for (let i = 0; i < elements.length; i++) {
@@ -27,32 +28,37 @@ const Question = ({ questionData, questionNum, changeState, addPoint }) => {
   };
 
   const handleSubmit = () => {
+    let correct = document.querySelector(`.${sectionName} .correct`);
+
     //////////////// LOGIC FOR SELECTED VS CORRECT ANSWER
     let result = "";
-    let selectedElement = document.getElementsByClassName("selected")[0];
-    let correctElement = document.getElementsByClassName("correct")[0];
 
     if (selected === "no_selection") {
       result = "You need to select an answer";
-    } else if (selected === questionData.correct) {
+      return alert(result);
+    } else if (selected === correct) {
       result = "You are correct";
-      selectedElement.style.backgroundColor = "#FFBE0B";
+      // selectedElement.style.backgroundColor = "#b38508";
+      selected.style.backgroundColor = "#b38508";
+      selected.style.boxShadow = "inset 0 0 0 3px green";
       addPoint(1);
     } else {
       result = "You are incorrect";
-      selectedElement.style.backgroundColor = "#4b1a02";
-      correctElement.style.backgroundColor = "#FFBE0B";
-      correctElement.style.boxShadow = "0 2.4rem 4.8rem rgba(0, 0, 0, 0.15)";
+      // selected.style.backgroundColor = "#4c0021";
+      selected.style.boxShadow = "inset 0 0 0 3px #4c0021";
+      correct.style.boxShadow = "inset 0 0 0 3px green";
       addPoint(0);
     }
+    console.log(result);
 
     //////////////// CHANGES THE QUESTION NUMBER BY USING THE STATE OF THE PARENT ELEMENT
-    // console.log("2");
-    changeState();
+    setTimeout(() => {
+      changeState();
+    }, 500);
   };
 
   return (
-    <div className={`section ${hideElement ? "hide-alt" : ""}`}>
+    <div className={`section ${hideElement ? "hide-alt" : ""} ${sectionName}`}>
       <div className="section-content">
         <QuestionNumber number={questionData.number} />
         <div className="question-container">
