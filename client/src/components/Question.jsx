@@ -42,22 +42,23 @@ const Question = ({
 
       if (selected === "no_selection") {
         result = "You need to select an answer";
-        alert(result);
+        // alert(result);
         selectionRequired(true);
       } else {
         button.innerHTML = "Next";
         if (selected === correct) {
           result = "You are correct";
-          // selectedElement.style.backgroundColor = "#b38508";
-          selected.style.backgroundColor = "#b38508";
-          selected.style.boxShadow = "inset 0 0 0 3px green";
+          // selectedElement.style.backgroundColor = "";
+          selected.style.backgroundColor = "#d8f5a2";
+          selected.style.boxShadow = "inset 0 0 0 3px #a9e34b";
           addPoint(1);
         } else {
           result = "You are incorrect";
-          // selected.style.backgroundColor = "#4c0021";
-          selected.style.boxShadow = "inset 0 0 0 3px #4c0021";
-          correct.style.boxShadow = "inset 0 0 0 3px green";
+          selected.style.backgroundColor = "#ff8787";
+          selected.style.boxShadow = "inset 0 0 0 3px #c92a2a";
+          correct.style.boxShadow = "inset 0 0 0 3px #a9e34b";
           addPoint(0);
+          correct.style.backgroundColor = "#d8f5a2";
         }
       }
       console.log(result);

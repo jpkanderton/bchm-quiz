@@ -332,7 +332,7 @@ body {
 .btn--submit {
   margin-top: 11rem;
   background-color: #ffd86d;
-  transition: all 1s;
+  transition: all 0.25s;
 }
 
 .btn--submit:hover {
@@ -453,17 +453,39 @@ body {
   width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-top: 15%;
   backdrop-filter: blur(10px);
 }
 
 .sr-contents {
+  display: flex;
+  width: 60rem;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .sr-text {
-  font-size: 8rem;
+  display: block;
+  margin-top: 3rem;
+  padding: 2rem;
+  border: 2px solid #00000075;
+  border-radius: 20px;
+  font-size: 4rem;
 }
 
 .btn--escape {
-  background-color: aqua;
+  display: inline-block;
+  border: none;
+  color: rgba(0, 0, 0, 0.68);
+  background: none;
+  padding: 0;
+}
+
+.btn--escape:hover {
+  color: rgba(0, 0, 0, 0.879);
+}
+
+.icon-close-outline {
+  height: 5rem;
+  width: 5rem;
 }
