@@ -29,6 +29,9 @@ const Question = ({ questionData, questionNum, changeState, addPoint }) => {
 
   const handleSubmit = () => {
     let correct = document.querySelector(`.${sectionName} .correct`);
+    let button = document.querySelector(`.${sectionName} .btn`);
+
+    button.innerHTML = "Next";
 
     //////////////// LOGIC FOR SELECTED VS CORRECT ANSWER
     let result = "";
