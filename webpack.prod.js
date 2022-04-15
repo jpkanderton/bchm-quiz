@@ -8,7 +8,7 @@ module.exports = {
     // publicPath: "/",
   },
   watch: true,
-  mode: "development",
+  mode: "production",
   module: {
     rules: [
       {
@@ -27,7 +27,16 @@ module.exports = {
       },
     ],
   },
-  // devServer: {
-  //   historyApiFallback: true,
-  // },
+  plugins: [
+    {
+      apply: (compiler) => {
+        compiler.hooks.done.tap("DonePlugin", (stats) => {
+          console.log("Compile is done !");
+          setTimeout(() => {
+            process.exit(0);
+          });
+        });
+      },
+    },
+  ],
 };
