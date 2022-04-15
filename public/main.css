@@ -404,4 +404,22 @@ body {
 
 .thanks-text {
   display: block;
+  color: #f7f7f7;
+  font-size: 5rem;
+}
+
+/* FINAL SCORE */
+
+.final-score-container {
+  padding: 2rem 2rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.final-score-text {
+  display: block;
+  color: #f7f7f7;
+  font-size: 5rem;
 }

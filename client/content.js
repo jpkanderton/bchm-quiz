@@ -1,32 +1,48 @@
 const questionsData = [
   {
     question: "Who was the first mayor of Hailey",
-    answers: ["John Hailey", "Kaili Smith ", "Michael Starr", "Arnold Palmer"],
+    answers: [
+      "John Hailey",
+      "David Ketchum",
+      "Alexander Ross",
+      "Ernest Hemingway",
+    ],
     correct: 0,
   },
   {
-    question: "who is john hailey",
-    answers: ["answer1b ", "answer2 b", "answer 3", "answer4"],
-    correct: 0,
-  },
-  {
-    question: "who is michael",
-    answers: ["answer1", "answer2", "answer 3", "answer4"],
-    correct: 1,
-  },
-  {
-    question: "who is tom",
-    answers: ["answer1 tom", "answer2 tom", "answer 3", "answer4"],
+    question: "What year was Hailey founded?",
+    answers: ["1850 ", "1866", "1881", "1903"],
     correct: 2,
   },
   {
-    question: "who is tommy",
-    answers: ["answer1", "answer2", "answer 3", "answer4"],
+    question: "Which famous poet calls Hailey, Idaho their birthplace?",
+    answers: [
+      "Jack Kerouac",
+      "Langston Hughes",
+      "Shel Silverstein",
+      "Ezra Pound",
+    ],
+    correct: 3,
+  },
+  {
+    question: "What was the City of Hailey the first in doing?",
+    answers: ["4th of July BBQ", "Electric Lighting", "Computers", "Homework"],
     correct: 1,
   },
   {
-    question: "who is michael",
-    answers: ["answer1", "answer2", "answer 3", "answer4"],
+    question: "Why are there no 19th Century buildings remaining in Hailey?",
+    answers: ["Earthquakes", "Dinosaurs", "Fires", "Floods"],
+    correct: 2,
+  },
+  {
+    question:
+      "In 1936, what did Averill Harriman build the first of in America?",
+    answers: [
+      "Gold mine",
+      "Destination Ski Resort",
+      "Old West Rodeo Show",
+      "Train Station",
+    ],
     correct: 1,
   },
 ];

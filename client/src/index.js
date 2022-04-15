@@ -6,6 +6,7 @@ import CorrectAnswer from "./components/CorrectAnswer.jsx";
 import Question from "./components/Question.jsx";
 import Questions from "./components/Questions.jsx";
 import HomeScreen from "./components/HomeScreen.jsx";
+import FinalScore from "./components/FinalScore.jsx";
 import Thanks from "./components/Thanks.jsx";
 
 const questionRoutes = ReactDOM.render(
@@ -14,6 +15,7 @@ const questionRoutes = ReactDOM.render(
       <Route path="/" element={<HomeScreen />}></Route>
       <Route path="/correct" element={<CorrectAnswer />}></Route>
       <Route path="/questions" element={<Questions />} />
+      <Route path="/finalScore" element={<FinalScore />} />
       <Route path="/thanks" element={<Thanks />} />
     </Routes>
   </BrowserRouter>,

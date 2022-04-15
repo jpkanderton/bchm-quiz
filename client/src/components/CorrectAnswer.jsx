@@ -13,7 +13,7 @@ const CorrectAnswer = () => {
       <div className="section-content section-content-answer">
         <Exit />
         <ion-icon
-          class="icon"
+          className="icon"
           name="happy-outline"
           onClick={handleClick}
         ></ion-icon>

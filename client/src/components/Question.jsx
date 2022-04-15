@@ -5,8 +5,10 @@ import questions from "../../content.js";
 
 const { useState, useEffect } = React;
 
-const Question = ({ questionData, number, changeState }) => {
+const Question = ({ questionData, number, changeState, addPoint }) => {
+  console.log(`question index is ${number}`);
   const [selected, setSelected] = useState("no_selection");
+
   let hideElement = number !== questionData.number;
 
   //////////////// LOGIC TO HANDLE SELECTION OF ANSWER
@@ -26,7 +28,6 @@ const Question = ({ questionData, number, changeState }) => {
 
   const handleSubmit = () => {
     //////////////// LOGIC FOR SELECTED VS CORRECT ANSWER
-    /*
     let result = "";
     let selectedElement = document.getElementsByClassName("selected")[0];
     let correctElement = document.getElementsByClassName("correct")[0];
@@ -36,15 +37,17 @@ const Question = ({ questionData, number, changeState }) => {
     } else if (selected === questionData.correct) {
       result = "You are correct";
       selectedElement.style.backgroundColor = "#FFBE0B";
+      addPoint(1);
     } else {
       result = "You are incorrect";
       selectedElement.style.backgroundColor = "#4b1a02";
       correctElement.style.backgroundColor = "#FFBE0B";
       correctElement.style.boxShadow = "0 2.4rem 4.8rem rgba(0, 0, 0, 0.15)";
+      addPoint(0);
     }
-    */
 
     //////////////// CHANGES THE QUESTION NUMBER BY USING THE STATE OF THE PARENT ELEMENT
+    // console.log("2");
     changeState();
   };
 

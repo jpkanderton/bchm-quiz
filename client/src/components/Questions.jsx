@@ -4,30 +4,47 @@ import questionsData from "../../content.js";
 import Question from "./Question.jsx";
 import Exit from "./Exit.jsx";
 
-const { useState } = React;
+const { useState, useEffect } = React;
 
 export default () => {
   const navigate = useNavigate();
-  const [state, setState] = useState(0);
+  const [questionNum, changeQuestion] = useState(0);
+  const [points, setPoints] = useState(0);
+  const [nextSection, setNS] = useState(false);
+  console.log(`point total is: ${points}`);
+
+  //////////////// LOGIC TO ADD POINT
+
+  const addPoint = (amnt) => {
+    setPoints(points + amnt);
+  };
 
   //////////////// LOGIC TO CHANGE THE STATE OF THE
-  const changeState = () => {
-    if (state >= questionsData.length - 1) {
-      navigate("/thanks");
+  useEffect(() => {
+    if (nextSection) {
+      navigate("/finalScore", { state: { points: points } });
     }
-    setState(state + 1);
+  }, [nextSection]);
+
+  const changeState = () => {
+    if (questionNum >= questionsData.length - 1) {
+      setNS(true);
+    }
+    changeQuestion(questionNum + 1);
   };
 
   return (
-    <div class="questions-component">
+    <div className="questions-component">
       <Exit />
       {questionsData.map((questionData, index) => {
         questionData.number = index;
         return (
           <Question
+            key={index}
             questionData={questionData}
-            number={state}
+            number={questionNum}
             changeState={changeState}
+            addPoint={addPoint}
           />
         );
       })}

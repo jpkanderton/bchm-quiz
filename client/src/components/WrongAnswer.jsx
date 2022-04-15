@@ -6,7 +6,7 @@ const WrongAnswer = () => {
     <div className="section wrong-answer hide-alt">
       <div className="section-content">
         <Exit />
-        <ion-icon class="icon" name="sad-outline"></ion-icon>
+        <ion-icon className="icon" name="sad-outline"></ion-icon>
       </div>
     </div>
   );

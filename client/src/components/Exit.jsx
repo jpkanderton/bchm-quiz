@@ -12,7 +12,7 @@ const Exit = () => {
     <div className="container-exit">
       <a onClick={handleClick}>
         <div className="exit-text">Exit</div>
-        <ion-icon class="icon-exit" name="exit-outline"></ion-icon>
+        <ion-icon className="icon-exit" name="exit-outline"></ion-icon>
       </a>
     </div>
   );
