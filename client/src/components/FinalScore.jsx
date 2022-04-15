@@ -6,7 +6,8 @@ const { useState } = React;
 export default () => {
   const navigate = useNavigate();
   const { state } = useLocation();
-  const points = state ? state.points : null;
+  const points = state ? state.points : 6;
+  const totalQuestions = state ? state.totalQuestions : 6;
 
   const handleClick = () => {
     navigate("/thanks");
@@ -14,9 +15,17 @@ export default () => {
 
   return (
     <div className="final-score-container">
-      <p className="final-score-text" onClick={handleClick}>
-        Your Final Score Is: {points}
-      </p>
+      <p className="final-score-text">Your Final Score Is:</p>
+      <div className="final-score-numbers-container">
+        <div class="final-score-numbers">
+          {points} / {totalQuestions}
+        </div>
+      </div>
+      <div className="next-container">
+        <a className="next" onClick={handleClick}>
+          Next
+        </a>
+      </div>
     </div>
   );
 };

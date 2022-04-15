@@ -23,7 +23,9 @@ export default () => {
   //////////////// LOGIC TRIGGER A ROUTE CHANGE
   useEffect(() => {
     if (nextSection) {
-      navigate("/finalScore", { state: { points: points } });
+      navigate("/finalScore", {
+        state: { points: points, totalQuestions: questionNum },
+      });
     }
   }, [nextSection]);
 
