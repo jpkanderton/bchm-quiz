@@ -8,7 +8,7 @@ const { useState, useEffect } = React;
 
 export default () => {
   const navigate = useNavigate();
-  const [questionNum, changeQuestion] = useState(0);
+  const [questionNum, changeQuestion] = useState(1);
   const [points, setPoints] = useState(0);
   const [nextSection, setNS] = useState(false);
   console.log(`point total is: ${points}`);
@@ -27,7 +27,10 @@ export default () => {
   }, [nextSection]);
 
   const changeState = () => {
-    if (questionNum >= questionsData.length - 1) {
+    console.log(
+      `the Current Question is ${questionNum} and the length is ${questionsData.length}`
+    );
+    if (questionNum >= questionsData.length) {
       setNS(true);
     }
     changeQuestion(questionNum + 1);
