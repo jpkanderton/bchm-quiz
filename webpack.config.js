@@ -8,7 +8,7 @@ module.exports = {
     // publicPath: "/",
   },
   watch: true,
-  mode: "development",
+  mode: "production",
   module: {
     rules: [
       {
