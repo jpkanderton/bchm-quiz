@@ -217,14 +217,34 @@ body {
   gap: 3rem;
 }
 
+.bchs-logo-container {
+  position: relative;
+  z-index: 1;
+}
+
 .bchs-logo {
   width: 22rem;
+  z-index: 1;
+}
+
+.bchs-logo-container::before {
+  position: absolute;
+  content: "";
+  background-color: #33260235;
+  width: 200%;
+  height: 200%;
+  border-radius: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
 }
 
 .bchs-text {
   font-size: 2.4rem;
   text-transform: uppercase;
   color: #f7f7f7;
+  z-index: 1;
 }
 
 .btn-box--home {
@@ -312,6 +332,7 @@ body {
 .btn--submit {
   margin-top: 11rem;
   background-color: #ffd86d;
+  transition: all 1s;
 }
 
 .btn--submit:hover {
@@ -422,4 +443,27 @@ body {
   display: block;
   color: #f7f7f7;
   font-size: 5rem;
+}
+
+/* SELECTION REQUIRED */
+
+.sr-container {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.sr-contents {
+}
+
+.sr-text {
+  font-size: 8rem;
+}
+
+.btn--escape {
+  background-color: aqua;
 }

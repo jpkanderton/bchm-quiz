@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import questionsData from "../../content.js";
 import Question from "./Question.jsx";
 import Exit from "./Exit.jsx";
+import SelectionRequired from "./SelectionRequired.jsx";
 
 const { useState, useEffect } = React;
 
@@ -34,6 +35,13 @@ export default () => {
     changeQuestion(questionNum + 1);
   };
 
+  const selectionRequired = () => {
+    let element = document.querySelector(".sr-container");
+    let exit = document.querySelector(".container-exit");
+    exit.classList.toggle("hide-alt");
+    element.classList.toggle("hide-alt");
+  };
+
   return (
     <div className="questions-component">
       <Exit />
@@ -46,9 +54,11 @@ export default () => {
             questionNum={questionNum}
             changeState={changeState}
             addPoint={addPoint}
+            selectionRequired={selectionRequired}
           />
         );
       })}
+      <SelectionRequired selectionRequired={selectionRequired} />
     </div>
   );
 };

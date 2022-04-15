@@ -27,11 +27,13 @@ const HomeScreen = () => {
         <div className="section-content">
           <div className="brand-box">
             <div className="brand-box-inner">
-              <img
-                src={bchsLogo}
-                alt="Blaine County Historical Museum logo"
-                className="bchs-logo"
-              />
+              <div className="bchs-logo-container">
+                <img
+                  src={bchsLogo}
+                  alt="Blaine County Historical Museum logo"
+                  className="bchs-logo"
+                />
+              </div>
               <p className="bchs-text">Blaine County Historical Museum Quiz</p>
             </div>
           </div>

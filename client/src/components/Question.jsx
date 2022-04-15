@@ -1,11 +1,18 @@
 import React from "react";
 import QuestionNumber from "./QuestionNumber.jsx";
+import SelectionRequired from "./SelectionRequired.jsx";
 import Exit from "./Exit.jsx";
 import questions from "../../content.js";
 
 const { useState, useEffect } = React;
 
-const Question = ({ questionData, questionNum, changeState, addPoint }) => {
+const Question = ({
+  questionData,
+  questionNum,
+  changeState,
+  addPoint,
+  selectionRequired,
+}) => {
   const sectionName = "section-question-" + questionData.number;
   console.log(`current question displayed is ${questionNum}`);
   const [selected, setSelected] = useState("no_selection");
@@ -29,35 +36,38 @@ const Question = ({ questionData, questionNum, changeState, addPoint }) => {
 
   const handleSubmit = () => {
     let correct = document.querySelector(`.${sectionName} .correct`);
-    let button = document.querySelector(`.${sectionName} .btn`);
+    let button = document.querySelector(`.${sectionName} .btn--submit`);
+    if (button.innerHTML === "Submit") {
+      let result = "";
 
-    button.innerHTML = "Next";
-
-    //////////////// LOGIC FOR SELECTED VS CORRECT ANSWER
-    let result = "";
-
-    if (selected === "no_selection") {
-      result = "You need to select an answer";
-      return alert(result);
-    } else if (selected === correct) {
-      result = "You are correct";
-      // selectedElement.style.backgroundColor = "#b38508";
-      selected.style.backgroundColor = "#b38508";
-      selected.style.boxShadow = "inset 0 0 0 3px green";
-      addPoint(1);
+      if (selected === "no_selection") {
+        result = "You need to select an answer";
+        alert(result);
+        selectionRequired(true);
+      } else {
+        button.innerHTML = "Next";
+        if (selected === correct) {
+          result = "You are correct";
+          // selectedElement.style.backgroundColor = "#b38508";
+          selected.style.backgroundColor = "#b38508";
+          selected.style.boxShadow = "inset 0 0 0 3px green";
+          addPoint(1);
+        } else {
+          result = "You are incorrect";
+          // selected.style.backgroundColor = "#4c0021";
+          selected.style.boxShadow = "inset 0 0 0 3px #4c0021";
+          correct.style.boxShadow = "inset 0 0 0 3px green";
+          addPoint(0);
+        }
+      }
+      console.log(result);
     } else {
-      result = "You are incorrect";
-      // selected.style.backgroundColor = "#4c0021";
-      selected.style.boxShadow = "inset 0 0 0 3px #4c0021";
-      correct.style.boxShadow = "inset 0 0 0 3px green";
-      addPoint(0);
-    }
-    console.log(result);
+      //////////////// CHANGES THE QUESTION NUMBER BY USING THE STATE OF THE PARENT ELEMENT
 
-    //////////////// CHANGES THE QUESTION NUMBER BY USING THE STATE OF THE PARENT ELEMENT
-    setTimeout(() => {
-      changeState();
-    }, 500);
+      setTimeout(() => {
+        changeState();
+      }, 500);
+    }
   };
 
   return (
