@@ -5,11 +5,11 @@ import questions from "../../content.js";
 
 const { useState, useEffect } = React;
 
-const Question = ({ questionData, number, changeState, addPoint }) => {
-  console.log(`question index is ${number}`);
+const Question = ({ questionData, questionNum, changeState, addPoint }) => {
+  console.log(`question index is ${questionNum}`);
   const [selected, setSelected] = useState("no_selection");
 
-  let hideElement = number !== questionData.number;
+  let hideElement = questionNum !== questionData.number;
 
   //////////////// LOGIC TO HANDLE SELECTION OF ANSWER
   const handleClick = (index) => {

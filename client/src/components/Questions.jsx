@@ -42,7 +42,7 @@ export default () => {
           <Question
             key={index}
             questionData={questionData}
-            number={questionNum}
+            questionNum={questionNum}
             changeState={changeState}
             addPoint={addPoint}
           />
